@@ -32,7 +32,6 @@ class SortMerge{
         {
             merge[x]=a[indx2];
             x++;indx2++;
-
         }
 
         for(int i=0,j=st;i<merge.length;i++,j++)
