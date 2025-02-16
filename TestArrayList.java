@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
@@ -8,6 +9,12 @@ public class TestArrayList {
 
     public static void main(String[] args) {
         List<Integer> list=new ArrayList<>();
+
+         List<String> list1= new ArrayList<>(Arrays.asList("hello","puppy")) ;   //list is mutable
+        // list= Arrays.asList("hello","puppy");     list is immutable
+        // list.add("yo");                           throws an error
+        list1.add("yo");
+        System.out.println(list1);
 
         list.add(3);
         list.add(1);
