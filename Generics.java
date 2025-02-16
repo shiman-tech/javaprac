@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 class Animal{
     public void eat()
     {
@@ -55,6 +58,11 @@ class TestGenerics2
         System.out.println(thing);
     }
 
+    public void printList(List<?> list)             //WILDCARD-? - ACCEPTS LIST OF ANY TYPE
+    {
+        System.out.println(list);
+    }
+
 
 
 }
@@ -87,6 +95,15 @@ public class Generics{
         test.genericMethod("puppy");
 
         test.boundedGenericMethod(new Cat());
+
+
+        List<Integer> list1=new ArrayList<>();
+        list1.add(1);list1.add(2);
+        List<String> list2=new ArrayList<>();
+        list2.add("chomu");list2.add("boii");
+
+        test.printList(list1);
+        test.printList(list2);
 
 
 
