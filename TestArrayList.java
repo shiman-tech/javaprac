@@ -30,6 +30,8 @@ public class TestArrayList {
 
         
 
+        
+
         list.set(2,1);
         System.out.println(list);
 
