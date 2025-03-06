@@ -137,6 +137,36 @@ public class Tries {
 
         }
         
+        public static String res="";
+        static void longestPrefixWord(Node root,StringBuilder temp)
+        {
+            if(root==null)
+            {
+                return;
+            }
+             
+            for(int i=0;i<26;i++)
+            {
+                if(root.children[i]!=null && root.children[i].eow==true)
+                {
+                    temp.append((char)(i+'a'));
+                
+
+                    if(temp.length()>res.length()){
+
+                        res=temp.toString();
+
+                    }
+
+                    longestPrefixWord(root.children[i], temp);
+                    temp.deleteCharAt(temp.length()-1);
+
+                }    
+
+
+
+            }
+        }
 
         public static void main(String[] args) {
 
@@ -152,7 +182,7 @@ public class Tries {
 
             System.out.println(startsWith("an"));*/
 
-            String str="ababa";
+          /*  String str="ababa";
 
             for(int i=0;i<str.length();i++)
             {
@@ -160,7 +190,18 @@ public class Tries {
                 insert(suffix) ;
             }
 
-            System.out.println(countSubstring(root));
+            System.out.println(countSubstring(root));*/
+
+            String words[]={"a","banana","app","appl","ap","apply","apple"};
+
+            for(int i=0;i<words.length;i++)
+            {
+                insert(words[i]);
+            }
+
+            longestPrefixWord(root, new StringBuilder(""));
+            System.out.println(res);
+
 
         }
 
