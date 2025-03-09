@@ -107,6 +107,9 @@ public class TestArray {
 
         int product=Arrays.stream(arr).reduce(1,(a , b) -> a*b); //when working with corresponding elements of arrays
         System.out.println(product); 
+        
+
+    
 
         
 

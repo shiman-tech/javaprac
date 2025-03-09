@@ -21,6 +21,40 @@ public class KeypadComb {
             
 
         }
+    }
+    static String[] keypad2={"0",".","abc","def","ghi","jkl","mno","pqrs","tuv","wxyz"};
+    public static void keypadSequence(String digits)  //7777266 - san
+    {
+        String sequence="";
+
+
+        for(int idx=0;idx<digits.length();idx++)
+        {
+            
+            char digit=digits.charAt(idx);
+            if((idx!=0 && digit==digits.charAt(idx-1)) || digit ==' ' )
+            {
+                continue;
+            }
+            int count=0;
+            for(int i=idx+1;i<digits.length() && digits.charAt(i)==digit;i++)
+            {
+                count++;
+            }
+            int mapidx=digit-'0';
+            System.out.println(count);
+          /*  if(count >= (keypad[mapidx].length()))
+            {
+                System.out.println("invalid combination");
+                return;
+            }*/
+            sequence=sequence+keypad2[mapidx].charAt(count);
+
+        }
+
+        System.out.println(sequence);
+
+
 
     }
 
@@ -31,6 +65,8 @@ public class KeypadComb {
         String combination="";
         combinations(digits,0,combination,list);
         System.out.println(list);
+
+        keypadSequence("7777266");
     }
     
 }
