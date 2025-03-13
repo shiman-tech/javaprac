@@ -71,6 +71,12 @@ public class TestArrayList {
         ArrayList <Integer> sublist=new ArrayList<>(list.subList(0,2));
         System.out.println(sublist);
 
+        ArrayList<Integer> l=new ArrayList<>(Arrays.asList(1,2,3,3,3,4,5,5));
+        int n=Collections.frequency(l,3);
+        System.out.println(n);
+
+        
+
 
 
 
